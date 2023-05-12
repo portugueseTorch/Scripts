@@ -9,11 +9,13 @@ mkdir .scripts || exit
 cp CPP_Scripts/*.py ./.scripts
 
 # Creating the alias - ADD YOUR NEW ONES HERE
-RC_FILE="$HOME/.zshrc"
+ZSH_FILE="$HOME/.zshrc"
+BASH_FILE="$HOME/.bashrc"
 
 # New module alias
-if ! grep "new=" "$RC_FILE" &> /dev/null; then
-	printf "\nalias new=\"python3 %s/.scripts/new_module.py\"\n" "$HOME" >> "$RC_FILE"
+if ! grep "new=" "$ZSH_FILE" &>  ! grep "new=" "$BASH_FILE" &> /dev/null; then
+	printf "\nalias new=\"python3 %s/.scripts/new_module.py\"\n" "$HOME" >> "$ZSH_FILE"
+	printf "\nalias new=\"python3 %s/.scripts/new_module.py\"\n" "$HOME" >> "$BASH_FILE"
 	echo "Alias \"new\" created"
 fi
 
