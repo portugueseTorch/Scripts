@@ -3,7 +3,7 @@ import shutil
 import os
 
 if len(sys.argv) < 3:
-	print("USAGE: newex __MODULE_NAME__ __NUMBER_EXERECISES__")
+	print("USAGE: new _MODULE_NAME_ _NUMBER_EXERECISES_")
 	quit()
 
 
