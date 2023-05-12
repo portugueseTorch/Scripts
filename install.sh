@@ -19,6 +19,13 @@ if ! grep "new=" "$ZSH_FILE" &>  ! grep "new=" "$BASH_FILE" &> /dev/null; then
 	echo "Alias \"new\" created"
 fi
 
+# New class alias
+if ! grep "class=" "$ZSH_FILE" &>  ! grep "class=" "$BASH_FILE" &> /dev/null; then
+	printf "\nalias class=\"python3 %s/.scripts/new_class.py\"\n" "$HOME" >> "$ZSH_FILE"
+	printf "\nalias class=\"python3 %s/.scripts/new_class.py\"\n" "$HOME" >> "$BASH_FILE"
+	echo "Alias \"class\" created"
+fi
+
 # Delete git repo
 rm -rf "$HOME/CPP_Scripts"
 

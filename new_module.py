@@ -6,7 +6,6 @@ if len(sys.argv) < 3:
 	print("USAGE: new _MODULE_NAME_ _NUMBER_EXERECISES_")
 	quit()
 
-
 module_folder = sys.argv[1]
 list = [ module_folder ]
 
