@@ -13,8 +13,8 @@ RC_FILE="$HOME/.zshrc"
 
 # New module alias
 if ! grep "new=" "$RC_FILE" &> /dev/null; then
-	echo "new alias not present"
 	printf "\nalias new=\"python3 %s/.scripts/new_module.py\"\n" "$HOME" >> "$RC_FILE"
+	echo "Alias \"new\" created"
 fi
 
 # Delete git repo
