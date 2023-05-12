@@ -21,6 +21,7 @@ def hpp_files(i):
     # Check if the file already exists
     if os.path.exists("inc/" + file_name + ".hpp"):
         print(file_name + ".hpp already exists")
+	return
     
 	# Try to open thefile in append mode
     try:
@@ -43,6 +44,7 @@ def cpp_files(i):
     # Check if the file already exists
     if os.path.exists("src/" + file_name + ".cpp"):
         print(file_name + ".cpp already exists")
+	return
     
 	# Try to open thefile in append mode
     try:
