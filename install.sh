@@ -12,6 +12,13 @@ cp Scripts/*.py ./.scripts
 ZSH_FILE="$HOME/.zshrc"
 BASH_FILE="$HOME/.bashrc"
 
+# New project alias
+if ! grep "proj=" "$ZSH_FILE" &>  ! grep "proj=" "$BASH_FILE" &> /dev/null; then
+	printf "\nalias proj=\"python3 %s/.scripts/new_project.py\"\n" "$HOME" >> "$ZSH_FILE"
+	printf "\nalias proj=\"python3 %s/.scripts/new_project.py\"\n" "$HOME" >> "$BASH_FILE"
+	echo "Alias \"proj\" created"
+fi
+
 # New module alias
 if ! grep "new=" "$ZSH_FILE" &>  ! grep "new=" "$BASH_FILE" &> /dev/null; then
 	printf "\nalias new=\"python3 %s/.scripts/new_module.py\"\n" "$HOME" >> "$ZSH_FILE"
