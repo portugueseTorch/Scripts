@@ -18,3 +18,6 @@ if ! grep "new=" "$RC_FILE" &> /dev/null; then
 
 # Delete git repo
 rm -rf CPP_Scripts
+
+# Automatically renews the shell session
+exec "$SHELL"
