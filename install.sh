@@ -21,4 +21,4 @@ fi
 rm -rf "$HOME/CPP_Scripts"
 
 # Automatically renews the shell session
-exec "$SHELL"
+exec "$SHELL" || exit
