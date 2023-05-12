@@ -15,9 +15,10 @@ RC_FILE="$HOME/.zshrc"
 if ! grep "new=" "$RC_FILE" &> /dev/null; then
 	echo "new alias not present"
 	printf "\nalias new=\"python3 %s/.scripts/new_module.py\"\n" "$HOME" >> "$RC_FILE"
+fi
 
 # Delete git repo
-rm -rf CPP_Scripts
+rm -rf "$HOME/CPP_Scripts"
 
 # Automatically renews the shell session
 exec "$SHELL"
