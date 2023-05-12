@@ -2,11 +2,11 @@
 
 # Go to the home directory and clone Scripts repo
 cd "$HOME" || exit
-git clone https://github.com/portugueseTorch/CPP_Scripts || exit
+git clone https://github.com/portugueseTorch/Scripts || exit
 
 # Create a new directory in home to store the scripts
 mkdir .scripts || exit
-cp CPP_Scripts/*.py ./.scripts
+cp Scripts/*.py ./.scripts
 
 # Creating the alias - ADD YOUR NEW ONES HERE
 ZSH_FILE="$HOME/.zshrc"
@@ -27,7 +27,7 @@ if ! grep "class=" "$ZSH_FILE" &>  ! grep "class=" "$BASH_FILE" &> /dev/null; th
 fi
 
 # Delete git repo
-rm -rf "$HOME/CPP_Scripts"
+rm -rf "$HOME/Scripts"
 
 # Automatically renews the shell session
 exec "$SHELL" || exit
