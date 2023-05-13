@@ -10,8 +10,8 @@ if num_classes < 1:
 def write_hpp_file(file, i):
     file_name = sys.argv[i]
 
-    file.write("\n#ifndef " + file_name.upper() + "_HPP\n # define " + file_name.upper() + "_HPP\n")
-    file.write("\nclass " + file_name + "\n{\n\tprivate:\n\t\t\n\tpublic:\n\t\t" + file_name + "();\n\t\t~" + file_name + "();\n};\n")
+    file.write("\n#ifndef " + file_name.upper() + "_HPP\n# define " + file_name.upper() + "_HPP\n")
+    file.write("\nclass " + file_name + "\n{\n\tpublic:\n\t\t" + file_name + "();\n\t\t~" + file_name + "();\n\tprivate:\n\t\t\n};\n")
     file.write("\n#endif\n")
     file.close()
 
