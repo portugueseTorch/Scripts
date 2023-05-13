@@ -10,7 +10,7 @@ if num_classes < 1:
 def write_hpp_file(file, i):
     file_name = sys.argv[i]
 
-    file.write("\n#ifndef " + file_name.upper() + "_HPP\n# define " + file_name.upper() + "_HPP\n")
+    file.write("#ifndef " + file_name.upper() + "_HPP\n# define " + file_name.upper() + "_HPP\n")
     file.write("\nclass " + file_name + "\n{\n\tpublic:\n\t\t" + file_name + "();\n\t\t~" + file_name + "();\n\tprivate:\n\t\t\n};\n")
     file.write("\n#endif\n")
     file.close()
@@ -34,7 +34,7 @@ def hpp_files(i):
 def write_cpp_file(file, i):
     file_name = sys.argv[i]
 
-    file.write("\n#include \"../inc/" + file_name + ".hpp\"\n")
+    file.write("#include \"../inc/" + file_name + ".hpp\"\n")
     file.write("\n" + file_name + "::" + file_name + "() {\n\t\n}\n\n" + file_name + "::~" + file_name + "() {\n\t\n}\n")
     file.close()
 
