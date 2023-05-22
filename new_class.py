@@ -11,7 +11,9 @@ def write_hpp_file(file, i):
     file_name = sys.argv[i]
 
     file.write("#ifndef " + file_name.upper() + "_HPP\n# define " + file_name.upper() + "_HPP\n")
-    file.write("\nclass " + file_name + "\n{\n\tpublic:\n\t\t" + file_name + "();\n\t\t~" + file_name + "();\n\tprivate:\n\t\t\n};\n")
+    file.write("\nclass " + file_name + "\n{\n\tpublic:\n\t\t" + file_name + 
+    	"();\n\t\t" + file_name + "(const " + file_name + " &obj);\n\t\t" + file_name + 
+        " &operator=(const " + file_name + " &obj);\n\t\t~" + file_name + "();\n\tprivate:\n\t\t\n};\n")
     file.write("\n#endif\n")
     file.close()
 
@@ -35,7 +37,10 @@ def write_cpp_file(file, i):
     file_name = sys.argv[i]
 
     file.write("#include \"../inc/" + file_name + ".hpp\"\n")
-    file.write("\n" + file_name + "::" + file_name + "() {\n\t\n}\n\n" + file_name + "::~" + file_name + "() {\n\t\n}\n")
+    file.write("\n" + file_name + "::" + file_name + "() {}\n\n" + 
+        file_name + "::" + file_name + "(const " + file_name + " &obj) {}\n\n" + 
+        file_name + " &" + file_name + "::operator=(const " + file_name + " &obj) {}\n\n" +
+        file_name + "::~" + file_name + "() {}\n")
     file.close()
 
 def cpp_files(i):
